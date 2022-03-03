@@ -26,6 +26,7 @@
     "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.15.0-alpha.0",
     "aws-cdk-lib": "2.15.0",
     "constructs": "^10.0.0",
+    "esbuild": "^0.14.24",
     "source-map-support": "^0.5.16"
   }
 }
