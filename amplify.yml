@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install
+        - npm install --prefix cdk
+    build:
+      commands:
+        - npm run build
+        - npm run --prefix cdk deploy
+  artifacts:
+    baseDirectory: public
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - node_modules/**/*
+      - cdk/node_modules/**/*
