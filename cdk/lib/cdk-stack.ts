@@ -19,6 +19,7 @@ export class RemixStack extends Stack {
       environment: {
         NODE_ENV: "production",
       },
+      depsLockFilePath: join(__dirname, "../../package-lock.json"),
       bundling: {
         nodeModules: [
 		      "@remix-run/architect",
