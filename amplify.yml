@@ -1,13 +1,11 @@
 version: 1
 frontend:
   phases:
-    preBuild:
-      commands:
-        - npm install
-        - npm install --prefix cdk
     build:
       commands:
+        - npm install
         - npm run build
+        - npm install --prefix cdk
         - npm run --prefix cdk deploy
   artifacts:
     baseDirectory: public

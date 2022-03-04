@@ -21,13 +21,13 @@ export class RemixStack extends Stack {
       },
       bundling: {
         nodeModules: [
-		"@remix-run/architect",
-		"@remix-run/node",
-		"@remix-run/server-runtime",
+		      "@remix-run/architect",
+		      "@remix-run/node",
+		      "@remix-run/server-runtime",
 	       	"@remix-run/react",
-		"react",
-		"react-dom"
-	],
+		      "react",
+		      "react-dom"
+        ],
       },
       timeout: cdk.Duration.seconds(10),
       logRetention: logs.RetentionDays.THREE_DAYS,
