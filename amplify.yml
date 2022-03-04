@@ -1,14 +1,18 @@
 version: 1
-frontend:
+backend:
   phases:
     build:
       commands:
         - npm install
         - npm run build
-        - cd cdk
-        - npm install
-        - npm run deploy
-        - cd ..
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm install --prefix cdk
+    build:
+      commands:
+        - npm run --prefix cdk deploy
   artifacts:
     baseDirectory: public
     files:
