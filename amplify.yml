@@ -5,8 +5,10 @@ frontend:
       commands:
         - npm install
         - npm run build
-        - npm install --prefix cdk
-        - npm run --prefix cdk deploy
+        - cd cdk
+        - npm install
+        - npm run deploy
+        - cd ..
   artifacts:
     baseDirectory: public
     files:
