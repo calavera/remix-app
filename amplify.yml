@@ -1,10 +1,14 @@
 version: 1
 backend:
   phases:
+    install:
+      commands:
+        - npm install -g esbuild
+        - npm install
     build:
       commands:
-        - npm install
         - npm run build
+        - esbuild --bundle server/index.js --outdir=dist --platform=node --external:aws-sdk
 frontend:
   phases:
     preBuild:

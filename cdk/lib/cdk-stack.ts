@@ -15,20 +15,9 @@ export class RemixStack extends Stack {
     const fn = new NodejsFunction(this, "RequestHandler", {
       runtime: lambda.Runtime.NODEJS_14_X,
       handler: "handler",
-      entry: join(__dirname, "../../server/index.js"),
+      entry: join(__dirname, "../../dist/index.js"),
       environment: {
         NODE_ENV: "production",
-      },
-      depsLockFilePath: join(__dirname, "../../package-lock.json"),
-      bundling: {
-        nodeModules: [
-		      "@remix-run/architect",
-		      "@remix-run/node",
-		      "@remix-run/server-runtime",
-	       	"@remix-run/react",
-		      "react",
-		      "react-dom"
-        ],
       },
       timeout: cdk.Duration.seconds(10),
       logRetention: logs.RetentionDays.THREE_DAYS,
