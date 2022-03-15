@@ -1,7 +1,7 @@
 version: 1
 backend:
   phases:
-    install:
+    preBuild:
       commands:
         - npm install -g esbuild
         - npm install
